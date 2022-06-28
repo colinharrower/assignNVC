@@ -4,12 +4,12 @@
 \alias{jaccard_sim}
 \title{Calculate Jaccard similarity between a focal sample and one or more comparison sample(s)}
 \usage{
-jaccard_sim(focal_spp, comp_spp_list, focal_id = NULL, top_n = 50)
+jaccard_sim(focal_spp, comp_spp_list, focal_id = NULL, top_n = 20)
 }
 \arguments{
-\item{focal_spp}{A character vector containing species names for the focal sample that to be compared against against the species in \code{comp_spp_list}}
+\item{focal_spp}{A character vector containing species for the focal sample that to be compared against against the species in \code{comp_spp_list}. The species can be specified using species names or ID codes but need to correspond to names or codes used in \code{comp_spp_list}.}
 
-\item{comp_spp_list}{A \code{list} containing the species recorded in the comparison samples, wheere each element is a seperate comparison sample and contains a character vector with the species recorded for that comparison sample. The names of the list elements will be the names/identifiers for the comparison samples}
+\item{comp_spp_list}{A \code{list} containing the species recorded in the comparison samples, where each element is a different comparison sample and contains a character vector with the species recorded for that comparison sample. The names of the list elements will be the names/identifiers for the comparison samples. As with \code{focal_spp} the species can be specified using either names or ID codes.}
 
 \item{focal_id}{An name or identifier for the focal sample. Default is \code{NULL}}
 
