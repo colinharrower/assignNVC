@@ -37,6 +37,6 @@ sub-community was set to match the number of samples originally
 used to define the NVC and produce the contingency tables.
 
 The citation for the paper is:
-Tipping, E., Henrys, P. A., Maskell, L. C., & Smart, S. M. (2013). Nitrogen deposition effects on plant species diversity; Threshold loads from field data. \emph{Environmental Pollution}, 179, 218–223.
+Tipping, E., Henrys, P. A., Maskell, L. C., & Smart, S. M. (2013). Nitrogen deposition effects on plant species diversity; Threshold loads from field data. \emph{Environmental Pollution}, 179, 218-223.
 }
 \keyword{datasets}
