@@ -29,3 +29,26 @@
 #' }
 #' @source \url{http://dx.doi.org/10.1016/j.envpol.2013.04.008}
 "ps_quad"
+
+
+#' NVC community floristic tables
+#'
+#' @description  A dataset of the NVC community floristic table information.
+#' For each NVC community/sub community this lists the species present and their
+#' respective constancy and frequency values.
+#'
+#' @details The data in this dataset can be used to generate new psuedo-quadrats
+#' for each NVC community/sub community.
+#'
+#'
+#' @format A data frame with 48194 rows and  variables:
+#' \describe{
+#'   \item{NVC}{The NVC community or sub-community code}
+#'   \item{BRC}{species ID code as used historically by the BRC}
+#'   \item{Species}{The species/taxa scientific name}
+#'   \item{Constancy}{The constancy value for the species specifying how commonly the species are likley to be in
+#'   samples from that NVC. Ranges from 1 to 5 where 1 is rare and 5 is constant}
+#'   \item{freq}{The probability/frequency of occurrence, these are related to the constancy where 1 = 0.1, 2 = 0.3, 3 = 0.5, 4 = 0.7, 5 = 0.9}
+#' }
+#'
+"NVC_communities"

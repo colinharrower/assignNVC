@@ -61,6 +61,13 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
 #' @export
 #'
 #' @examples
+#'
+#' #' # Create a test dataset
+#' test_samp = data.frame(ID = 1, species = c("Alchemilla alpina","Anthoxanthum odoratum","Blechnum spicant","Deschampsia flexuosa","Galium saxatile","Luzula sylvatica","Melampyrum pratense","Nardus stricta","Potentilla erecta","Rumex acetosella","Vaccinium myrtillus","Dicranum majus","Hylocomium splendens","Isothecium myosuroides","Plagiothecium undulatum","Pleurozium schreberi","Polytrichum commune","Racomitrium lanuginosum","Rhytidiadelphus loreus","Calypogeia fissa","Cladonia arbuscula","Cladonia bellidiflora","Cladonia coccifera","Cladonia uncialis"))
+#'
+#' # Now run assign_nvc on this data to get the top 10 most similar
+#' test_avg = nvc_average_sim(test_samp, exc_zero_match = TRUE)
+#'
 nvc_average_sim = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "ID", comp_id = "Pid3",exc_zero_match = TRUE){
   # if comp_df null then matching against pseudo-quadrats in built-in ps_quad dataset
   if(is.null(comp_df)){
