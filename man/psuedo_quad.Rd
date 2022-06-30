@@ -15,7 +15,7 @@ psuedo_quad(
 \arguments{
 \item{sp_freq}{A 2 column \code{data.frame} containing the species names, or codes, along with the frequency probability of occurrence}
 
-\item{nq}{An integer specifying the number of psuedo-quadrats to create. Where \code{sp_freq} contains data for multiple NVCs/groupings, indicated by values in \code{nvc_col} a vector of integer values, can be supplied if you want different numbers of psuedo-quadrats for the different NVC/groupings.  In this case the values in the \code{nq} vector must match the order in which the NVCs/groupings appear in \code{nvc_col}, i.e. the 1st nq value is the number of quadrats for the 1st NVC/group in \code{nvc_col}, the 2nd nq value the number of quadrats for the 2nd NVC, etc.}
+\item{nq}{An integer specifying the number of psuedo-quadrats to create. Where \code{sp_freq} contains data for multiple NVCs/groupings, indicated by values in \code{nvc_col} a vector of integer values, can be supplied if you want different numbers of psuedo-quadrats for the different NVC/groupings.  In this case the values in the \code{nq} vector must match the order in which the NVCs/groupings in \code{nvc_col} would be sorted, i.e. the 1st nq value is the number of quadrats for the 1st NVC/group in \code{nvc_col}, the 2nd nq value the number of quadrats for the 2nd NVC, etc.}
 
 \item{spp_col}{A character string giving the name of the column in sp_freq that contains the species names/codes. Default is "species"}
 

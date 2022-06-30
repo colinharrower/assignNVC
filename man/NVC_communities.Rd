@@ -5,7 +5,7 @@
 \alias{NVC_communities}
 \title{NVC community floristic tables}
 \format{
-A data frame with 48194 rows and  variables:
+A data frame with 48194 rows and 5 variables:
 \describe{
 \item{NVC}{The NVC community or sub-community code}
 \item{BRC}{species ID code as used historically by the BRC}

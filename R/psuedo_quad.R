@@ -3,7 +3,7 @@
 #' @description Produce data for psuedo-quadrat(s) from a species via random sampling using occurrence frequencies/probabilities of occurrence for each species to produce random samples of species that could have been obtained
 #'
 #' @param sp_freq A 2 column \code{data.frame} containing the species names, or codes, along with the frequency probability of occurrence
-#' @param nq An integer specifying the number of psuedo-quadrats to create. Where `sp_freq` contains data for multiple NVCs/groupings, indicated by values in `nvc_col` a vector of integer values, can be supplied if you want different numbers of psuedo-quadrats for the different NVC/groupings.  In this case the values in the `nq` vector must match the order in which the NVCs/groupings appear in `nvc_col`, i.e. the 1st nq value is the number of quadrats for the 1st NVC/group in `nvc_col`, the 2nd nq value the number of quadrats for the 2nd NVC, etc.
+#' @param nq An integer specifying the number of psuedo-quadrats to create. Where `sp_freq` contains data for multiple NVCs/groupings, indicated by values in `nvc_col` a vector of integer values, can be supplied if you want different numbers of psuedo-quadrats for the different NVC/groupings.  In this case the values in the `nq` vector must match the order in which the NVCs/groupings in `nvc_col` would be sorted, i.e. the 1st nq value is the number of quadrats for the 1st NVC/group in `nvc_col`, the 2nd nq value the number of quadrats for the 2nd NVC, etc.
 #' @param spp_col A character string giving the name of the column in sp_freq that contains the species names/codes. Default is "species"
 #' @param freq_col A character string giving the name of the column in sp_freq that contains the probability of occurrence for the give species. Default is "freq"
 #' @param nvc_col A character string giving the name of the column in `sp_freq` that contains the NVC codes (or other groupings). When specified
@@ -50,7 +50,7 @@ psuedo_quad = function(sp_freq, nq, spp_col = "species", freq_col = "freq", nvc_
   if(n_nvc > 1){
       # Setup temp object to hold data
         #ps_lt = by(sp_freq,INDICES = sp_freq[,nvc_col], FUN = psuedo_quad, nq = nq, spp_col = spp_col, freq_col = freq_col, nvc_col = nvc_col, simplify = FALSE)
-        temp_sf = by(sp_freq, sp_freq[,nvc_col], list)
+        temp_sf = by(sp_freq, factor(sp_freq[,nvc_col],levels = unique(sp_freq[,nvc_col])), list)
         ps_lt = mapply(FUN = psuedo_quad, sp_freq = temp_sf,nq = nq, MoreArgs = list(spp_col = spp_col, freq_col = freq_col, nvc_col = nvc_col), SIMPLIFY = FALSE)
       # Now collapse the by list
         temp_ps = do.call("rbind",ps_lt)
