@@ -19,9 +19,9 @@
 #' test_jac = assign_nvc(test_samp, top_n=10)
 #'
 assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "ID", comp_id = "Pid3", top_n = 20){
-  # if comp_df null then matching against pseudo-quadrats in built-in ps_quad dataset
+  # if comp_df null then matching against pseudo-quadrats in built-in psuedo-quadrat dataset
   if(is.null(comp_df)){
-    comp_df = ps_quad
+    comp_df = nvc_pquads
   }
   # Determine number of samples in samp_df
     in_samps = unique(samp_df[,samp_id])
