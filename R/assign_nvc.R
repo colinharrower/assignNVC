@@ -27,7 +27,7 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
     in_samps = unique(samp_df[,samp_id])
     n_samp = length(in_samps)
   # Produce list of unique names from comp_df (unique for each comparison sample not unique across all samples)
-    nvc_pq_spp = tapply(comp_df$name, comp_df[,comp_id],unique)
+    nvc_pq_spp = tapply(comp_df[,spp_col], comp_df[,comp_id],unique)
   # Create object to hold output data
       out_jac = vector("list",n_samp)
   # Loop through samples and determine match with all comparions samples in comp_df
