@@ -1,7 +1,7 @@
 #' Determine most similar NVCs for each sample by comparing samples against NVC psuedo-quadrat data
 #'
 #' @param samp_df A `data.frame` containing the sample data that you want to assign to NVC via comparison with psuedo-quadrat data
-#' @param comp_df A `data.frame` containing the comparison data samples you want to match your focal samples in `samp_df` to. The default value of `NULL` means that the comparison will use the NVC pseudo-quadrat data included with the package/
+#' @param comp_df A `data.frame` containing the comparison data samples you want to match your focal samples in `samp_df` to. The default value of `NULL` means that the comparison will use the NVC pseudo-quadrat data included with the package
 #' @param spp_col A character vector specifying the name of the column in `samp_df` and `comp_df`that contain the species names or codes that you want to match on. The default is for the column to be named `species`.
 #' @param samp_id A charcter vector specifying the name of the column in `samp_df` that contains the IDs identifying the data for each sample in the data you want assigned to NVC. The default is for the column to be named `ID`.
 #' @param comp_id A charcter vector specifying the name of the column in `comp_df` that contains the IDs identifying the data for each sample in the comparison data. The default is for the column to be named `ID`.
@@ -69,15 +69,15 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
 #' test_avg = nvc_average_sim(test_samp, exc_zero_match = TRUE)
 #'
 nvc_average_sim = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "ID", comp_id = "Pid3",exc_zero_match = TRUE){
-  # if comp_df null then matching against pseudo-quadrats in built-in ps_quad dataset
+  # if comp_df null then matching against pseudo-quadrats in built-in psuedo-quadrat dataset
   if(is.null(comp_df)){
-    comp_df = ps_quad
+    comp_df = nvc_pquads
   }
   # Determine number of samples in samp_df
   in_samps = unique(samp_df[,samp_id])
   n_samp = length(in_samps)
   # Produce list of unique names from comp_df (unique for each comparison sample not unique across all samples)
-  nvc_pq_spp = tapply(ps_quad$name, comp_df[,comp_id],unique)
+  nvc_pq_spp = tapply(comp_df$name, comp_df[,comp_id],unique)
   # Create object to hold output data
   out_avg = vector("list",n_samp)
   # Loop through samples and determine match with all comparions samples in comp_df
