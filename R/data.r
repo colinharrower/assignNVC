@@ -82,7 +82,7 @@
 #'   \item{NVC}{The NVC community or sub-community code}
 #'   \item{BRC}{species ID code as used historically by the BRC}
 #'   \item{Species}{The species/taxa scientific name}
-#'   \item{Constancy}{The constancy value for the species specifying how commonly the species are likley to be in
+#'   \item{Constancy}{The constancy value for the species specifying how commonly the species are likely to be in
 #'   samples from that NVC. Ranges from 1 to 5 where 1 is rare and 5 is constant}
 #'   \item{freq}{The probability/frequency of occurrence, these are related to the constancy where 1 = 0.1, 2 = 0.3, 3 = 0.5, 4 = 0.7, 5 = 0.9}
 #' }

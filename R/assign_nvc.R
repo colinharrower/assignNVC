@@ -54,7 +54,7 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
 #' @param comp_df A `data.frame` containing the comparison data samples you want to match your focal samples in `samp_df` to. The default value of `NULL` means that the comparison will use the NVC pseudo-quadrat data included with the package/
 #' @param spp_col A character vector specifying the name of the column in `samp_df` and `comp_df`that contain the species names or codes that you want to match on. The default is for the column to be named `species`.
 #' @param samp_id A charcter vector specifying the name of the column in `samp_df` that contains the IDs identifying the data for each sample in the data you want assigned to NVC. The default is for the column to be named `ID`.
-#' @param comp_id A charcter vector specifying the name of the column in `comp_df` that contains the IDs identifying the data for each sample in the comparison data. The default is for the column to be named `ID`.
+#' @param comp_id A charcter vector specifying the name of the column in `comp_df` that contains the IDs identifying the data for each sample in the comparison data. The default is for the column to be named `Pid3`.
 #' @param exc_zero_match A logical value determining whether NVC that have an average match of zero should be excluded from the returned results
 #'
 #' @return A `data.frame` returning the mean and standard deviation of jaccard similarities between each focal sample and the pseudo-quadrat samples for each NVC
@@ -62,7 +62,7 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
 #'
 #' @examples
 #'
-#' #' # Create a test dataset
+#' # Create a test dataset
 #' test_samp = data.frame(ID = 1, species = c("Alchemilla alpina","Anthoxanthum odoratum","Blechnum spicant","Deschampsia flexuosa","Galium saxatile","Luzula sylvatica","Melampyrum pratense","Nardus stricta","Potentilla erecta","Rumex acetosella","Vaccinium myrtillus","Dicranum majus","Hylocomium splendens","Isothecium myosuroides","Plagiothecium undulatum","Pleurozium schreberi","Polytrichum commune","Racomitrium lanuginosum","Rhytidiadelphus loreus","Calypogeia fissa","Cladonia arbuscula","Cladonia bellidiflora","Cladonia coccifera","Cladonia uncialis"))
 #'
 #' # Now run assign_nvc on this data to get the top 10 most similar
@@ -77,7 +77,7 @@ nvc_average_sim = function(samp_df, comp_df = NULL, spp_col = "species", samp_id
   in_samps = unique(samp_df[,samp_id])
   n_samp = length(in_samps)
   # Produce list of unique names from comp_df (unique for each comparison sample not unique across all samples)
-  nvc_pq_spp = tapply(comp_df$name, comp_df[,comp_id],unique)
+  nvc_pq_spp = tapply(comp_df[,spp_col], comp_df[,comp_id],unique)
   # Create object to hold output data
   out_avg = vector("list",n_samp)
   # Loop through samples and determine match with all comparions samples in comp_df
