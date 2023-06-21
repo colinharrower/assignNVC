@@ -5,7 +5,7 @@
 #' @param focal_spp A character vector containing species for the focal sample that to be compared against against the species in \code{comp_spp_list}. The species can be specified using species names or ID codes but need to correspond to names or codes used in \code{comp_spp_list}.
 #' @param comp_spp_list A \code{list} containing the species recorded in the comparison samples, where each element is a different comparison sample and contains a character vector with the species recorded for that comparison sample. The names of the list elements will be the names/identifiers for the comparison samples. As with \code{focal_spp} the species can be specified using either names or ID codes.
 #' @param focal_id An name or identifier for the focal sample. Default is \code{NULL}
-#' @param top_n An integer determining how many of the top scoring comparison samples and their similarity scores will be returned in the final data.frame. The default is \code{50}
+#' @param top_n An integer determining how many of the top scoring comparison samples and their similarity scores will be returned in the final data.frame. The default is \code{20} while a value of `NULL` will return all similarlites for all comparison samples.
 #'
 #' @return A \code{data.frame} containing the comparison samples, similarity scores for the \code{top_n} matches from \code{comp_spp_list}
 #' @export
