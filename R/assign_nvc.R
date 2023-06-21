@@ -1,13 +1,13 @@
-#' Determine most similar NVCs for each sample by comparing samples against NVC psuedo-quadrat data
+#' Determine most similar NVCs for each sample by comparing samples against NVC pseudo-quadrat data
 #'
-#' @param samp_df A `data.frame` containing the sample data that you want to assign to NVC via comparison with psuedo-quadrat data
+#' @param samp_df A `data.frame` containing the sample data that you want to assign to NVC via comparison with pseudo-quadrat data
 #' @param comp_df A `data.frame` containing the comparison data samples you want to match your focal samples in `samp_df` to. The default value of `NULL` means that the comparison will use the NVC pseudo-quadrat data included with the package
 #' @param spp_col A character vector specifying the name of the column in `samp_df` and `comp_df`that contain the species names or codes that you want to match on. The default is for the column to be named `species`.
 #' @param samp_id A charcter vector specifying the name of the column in `samp_df` that contains the IDs identifying the data for each sample in the data you want assigned to NVC. The default is for the column to be named `ID`.
 #' @param comp_id A charcter vector specifying the name of the column in `comp_df` that contains the IDs identifying the data for each sample in the comparison data. The default is for the column to be named `ID`.
 #' @param top_n An integer specifying the number most similar comparison samples to be returned, or `NULL` to return all matches. The default `top_n = 20` will return the 20 most similar samples from `comp_df` for each sample in `samp_df`.
 #'
-#' @return a `data.frame` detailing the most similar NVC psuedo-quadrats for each sample in the focal data `samp_df`
+#' @return a `data.frame` detailing the most similar NVC pseudo-quadrats for each sample in the focal data `samp_df`
 #' @export
 #'
 #' @examples
@@ -19,7 +19,7 @@
 #' test_jac = assign_nvc(test_samp, top_n=10)
 #'
 assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "ID", comp_id = "Pid3", top_n = 20){
-  # if comp_df null then matching against pseudo-quadrats in built-in psuedo-quadrat dataset
+  # if comp_df null then matching against pseudo-quadrats in built-in pseudo-quadrat dataset
   if(is.null(comp_df)){
     comp_df = nvc_pquads
   }
@@ -48,9 +48,9 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
 
 
 
-#' Determine the average similarities between a set of focal sample(s) and a set of NVC psuedo-quadrat sample(s)
+#' Determine the average similarities between a set of focal sample(s) and a set of NVC pseudo-quadrat sample(s)
 #'
-#' @param samp_df A `data.frame` containing the sample data that you want to assign to NVC via comparison with psuedo-quadrat data
+#' @param samp_df A `data.frame` containing the sample data that you want to assign to NVC via comparison with pseudo-quadrat data
 #' @param comp_df A `data.frame` containing the comparison data samples you want to match your focal samples in `samp_df` to. The default value of `NULL` means that the comparison will use the NVC pseudo-quadrat data included with the package/
 #' @param spp_col A character vector specifying the name of the column in `samp_df` and `comp_df`that contain the species names or codes that you want to match on. The default is for the column to be named `species`.
 #' @param samp_id A charcter vector specifying the name of the column in `samp_df` that contains the IDs identifying the data for each sample in the data you want assigned to NVC. The default is for the column to be named `ID`.
@@ -69,7 +69,7 @@ assign_nvc = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "I
 #' test_avg = nvc_average_sim(test_samp, exc_zero_match = TRUE)
 #'
 nvc_average_sim = function(samp_df, comp_df = NULL, spp_col = "species", samp_id = "ID", comp_id = "Pid3",exc_zero_match = TRUE){
-  # if comp_df null then matching against pseudo-quadrats in built-in psuedo-quadrat dataset
+  # if comp_df null then matching against pseudo-quadrats in built-in pseudo-quadrat dataset
   if(is.null(comp_df)){
     comp_df = nvc_pquads
   }

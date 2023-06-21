@@ -12,7 +12,7 @@
 #'   should both use a  standardised nomenclature, however this may not often be
 #'   possible.
 #' @param samp_df A `data.frame` containing the sample data that you want to
-#'   assign to NVC via comparison with psuedo-quadrat data
+#'   assign to NVC via comparison with pseudo-quadrat data
 #' @param comp_df  A `data.frame` containing the comparison data samples you
 #'   want to match your focal samples in `samp_df` to. The default value of
 #'   `NULL` means that the comparison will use the NVC pseudo-quadrat data
@@ -24,7 +24,7 @@
 #'   output text to the display
 #'
 #' @return A `character` vector containing the names of species from the sample
-#'   data that were not matched to names in the psuedo-quadrant data
+#'   data that were not matched to names in the pseudo-quadrant data
 #' @export
 #'
 #' @details Currently the NVC pseudo-quadrat data uses relatively old
@@ -45,7 +45,7 @@
 #' unmatched_spp = compare_spp_names(test_samp)
 #'
 compare_spp_names = function(samp_df, comp_df = NULL,spp_col = "species",verbose = TRUE){
-  # if comp_df null then matching against pseudo-quadrats in built-in psuedo-quadrat dataset
+  # if comp_df null then matching against pseudo-quadrats in built-in pseudo-quadrat dataset
   if(is.null(comp_df)){
     comp_df = nvc_pquads
   }
@@ -53,14 +53,14 @@ compare_spp_names = function(samp_df, comp_df = NULL,spp_col = "species",verbose
     samp_names = unique(samp_df[,spp_col])
   # Get all unique species names from comp_df
     ps_names = unique(comp_df[,spp_col])
-  # Find all names not in psuedo-quadrat/comparison df
+  # Find all names not in pseudo-quadrat/comparison df
     miss_names = samp_names[which(!samp_names %in% ps_names)]
     n_miss = length(miss_names)
     if(verbose){
         if(n_miss > 0){
-          cat("warning: ",n_miss," name(s) from samp_df not found in psuedo-quadrat/comparison data\n",sep="")
+          cat("warning: ",n_miss," name(s) from samp_df not found in pseudo-quadrat/comparison data\n",sep="")
         } else{
-          cat("All names in samp_df present in psuedo-quadrat/comparison data\n")
+          cat("All names in samp_df present in pseudo-quadrat/comparison data\n")
         }
     }
     if(length(miss_names) == 0){
