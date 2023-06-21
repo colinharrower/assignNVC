@@ -16,7 +16,7 @@ assign_nvc(
 \arguments{
 \item{samp_df}{A \code{data.frame} containing the sample data that you want to assign to NVC via comparison with psuedo-quadrat data}
 
-\item{comp_df}{A \code{data.frame} containing the comparison data samples you want to match your focal samples in \code{samp_df} to. The default value of \code{NULL} means that the comparison will use the NVC pseudo-quadrat data included with the package/}
+\item{comp_df}{A \code{data.frame} containing the comparison data samples you want to match your focal samples in \code{samp_df} to. The default value of \code{NULL} means that the comparison will use the NVC pseudo-quadrat data included with the package}
 
 \item{spp_col}{A character vector specifying the name of the column in \code{samp_df} and \code{comp_df}that contain the species names or codes that you want to match on. The default is for the column to be named \code{species}.}
 

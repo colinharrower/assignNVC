@@ -13,7 +13,7 @@ jaccard_sim(focal_spp, comp_spp_list, focal_id = NULL, top_n = 20)
 
 \item{focal_id}{An name or identifier for the focal sample. Default is \code{NULL}}
 
-\item{top_n}{An integer determining how many of the top scoring comparison samples and their similarity scores will be returned in the final data.frame. The default is \code{50}}
+\item{top_n}{An integer determining how many of the top scoring comparison samples and their similarity scores will be returned in the final data.frame. The default is \code{20} while a value of \code{NULL} will return all similarlites for all comparison samples.}
 }
 \value{
 A \code{data.frame} containing the comparison samples, similarity scores for the \code{top_n} matches from \code{comp_spp_list}

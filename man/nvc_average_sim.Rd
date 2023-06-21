@@ -22,7 +22,7 @@ nvc_average_sim(
 
 \item{samp_id}{A charcter vector specifying the name of the column in \code{samp_df} that contains the IDs identifying the data for each sample in the data you want assigned to NVC. The default is for the column to be named \code{ID}.}
 
-\item{comp_id}{A charcter vector specifying the name of the column in \code{comp_df} that contains the IDs identifying the data for each sample in the comparison data. The default is for the column to be named \code{ID}.}
+\item{comp_id}{A charcter vector specifying the name of the column in \code{comp_df} that contains the IDs identifying the data for each sample in the comparison data. The default is for the column to be named \code{Pid3}.}
 
 \item{exc_zero_match}{A logical value determining whether NVC that have an average match of zero should be excluded from the returned results}
 }
@@ -34,7 +34,7 @@ Determine the average similarities between a set of focal sample(s) and a set of
 }
 \examples{
 
-#' # Create a test dataset
+# Create a test dataset
 test_samp = data.frame(ID = 1, species = c("Alchemilla alpina","Anthoxanthum odoratum","Blechnum spicant","Deschampsia flexuosa","Galium saxatile","Luzula sylvatica","Melampyrum pratense","Nardus stricta","Potentilla erecta","Rumex acetosella","Vaccinium myrtillus","Dicranum majus","Hylocomium splendens","Isothecium myosuroides","Plagiothecium undulatum","Pleurozium schreberi","Polytrichum commune","Racomitrium lanuginosum","Rhytidiadelphus loreus","Calypogeia fissa","Cladonia arbuscula","Cladonia bellidiflora","Cladonia coccifera","Cladonia uncialis"))
 
 # Now run assign_nvc on this data to get the top 10 most similar
