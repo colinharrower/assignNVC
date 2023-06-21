@@ -11,6 +11,13 @@
 #' @export
 #'
 #' @examples
+#'
+#' # Create a test dataset
+#' test_samp = data.frame(ID = 1, species = c("Alchemilla alpina","Anthoxanthum odoratum","Blechnum spicant","Deschampsia flexuosa","Galium saxatile","Luzula sylvatica","Melampyrum pratense","Nardus stricta","Potentilla erecta","Rumex acetosella","Vaccinium myrtillus","Dicranum majus","Hylocomium splendens","Isothecium myosuroides","Plagiothecium undulatum","Pleurozium schreberi","Polytrichum commune","Racomitrium lanuginosum","Rhytidiadelphus loreus","Calypogeia fissa","Cladonia arbuscula","Cladonia bellidiflora","Cladonia coccifera","Cladonia uncialis"))
+#'
+#' # Now test this species list agaist a pseudo-quadrat species list
+#' jaccard_sim(test_samp$species,tapply(nvc_pquads[,"species"], nvc_pquads[,"Pid3"],unique))
+#'
 jaccard_sim = function(focal_spp, comp_spp_list, focal_id = NULL,top_n = 20){
   # Determine number of species in focal_spp
     n_foc = length(focal_spp)

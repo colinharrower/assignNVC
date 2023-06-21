@@ -21,3 +21,12 @@ A \code{data.frame} containing the comparison samples, similarity scores for the
 \description{
 Calculate the Jaccard similarity values between the species recorded for a focal site or sample against those recorded for a series of comparison sites or samples (e.g. against the NVC pseudo-quadrats) and then return the \code{top_n} matches in \code{comp_spp_list} based on their similarity scores with the species in focal sample
 }
+\examples{
+
+# Create a test dataset
+test_samp = data.frame(ID = 1, species = c("Alchemilla alpina","Anthoxanthum odoratum","Blechnum spicant","Deschampsia flexuosa","Galium saxatile","Luzula sylvatica","Melampyrum pratense","Nardus stricta","Potentilla erecta","Rumex acetosella","Vaccinium myrtillus","Dicranum majus","Hylocomium splendens","Isothecium myosuroides","Plagiothecium undulatum","Pleurozium schreberi","Polytrichum commune","Racomitrium lanuginosum","Rhytidiadelphus loreus","Calypogeia fissa","Cladonia arbuscula","Cladonia bellidiflora","Cladonia coccifera","Cladonia uncialis"))
+
+# Now test this species list agaist a pseudo-quadrat species list
+jaccard_sim(test_samp$species,tapply(nvc_pquads[,"species"], nvc_pquads[,"Pid3"],unique))
+
+}
