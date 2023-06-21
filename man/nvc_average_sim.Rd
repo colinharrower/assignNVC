@@ -2,7 +2,7 @@
 % Please edit documentation in R/assign_nvc.R
 \name{nvc_average_sim}
 \alias{nvc_average_sim}
-\title{Determine the average similarities between a set of focal sample(s) and a set of NVC psuedo-quadrat sample(s)}
+\title{Determine the average similarities between a set of focal sample(s) and a set of NVC pseudo-quadrat sample(s)}
 \usage{
 nvc_average_sim(
   samp_df,
@@ -14,7 +14,7 @@ nvc_average_sim(
 )
 }
 \arguments{
-\item{samp_df}{A \code{data.frame} containing the sample data that you want to assign to NVC via comparison with psuedo-quadrat data}
+\item{samp_df}{A \code{data.frame} containing the sample data that you want to assign to NVC via comparison with pseudo-quadrat data}
 
 \item{comp_df}{A \code{data.frame} containing the comparison data samples you want to match your focal samples in \code{samp_df} to. The default value of \code{NULL} means that the comparison will use the NVC pseudo-quadrat data included with the package/}
 
@@ -30,7 +30,7 @@ nvc_average_sim(
 A \code{data.frame} returning the mean and standard deviation of jaccard similarities between each focal sample and the pseudo-quadrat samples for each NVC
 }
 \description{
-Determine the average similarities between a set of focal sample(s) and a set of NVC psuedo-quadrat sample(s)
+Determine the average similarities between a set of focal sample(s) and a set of NVC pseudo-quadrat sample(s)
 }
 \examples{
 

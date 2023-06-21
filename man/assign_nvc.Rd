@@ -2,7 +2,7 @@
 % Please edit documentation in R/assign_nvc.R
 \name{assign_nvc}
 \alias{assign_nvc}
-\title{Determine most similar NVCs for each sample by comparing samples against NVC psuedo-quadrat data}
+\title{Determine most similar NVCs for each sample by comparing samples against NVC pseudo-quadrat data}
 \usage{
 assign_nvc(
   samp_df,
@@ -14,7 +14,7 @@ assign_nvc(
 )
 }
 \arguments{
-\item{samp_df}{A \code{data.frame} containing the sample data that you want to assign to NVC via comparison with psuedo-quadrat data}
+\item{samp_df}{A \code{data.frame} containing the sample data that you want to assign to NVC via comparison with pseudo-quadrat data}
 
 \item{comp_df}{A \code{data.frame} containing the comparison data samples you want to match your focal samples in \code{samp_df} to. The default value of \code{NULL} means that the comparison will use the NVC pseudo-quadrat data included with the package}
 
@@ -27,10 +27,10 @@ assign_nvc(
 \item{top_n}{An integer specifying the number most similar comparison samples to be returned, or \code{NULL} to return all matches. The default \code{top_n = 20} will return the 20 most similar samples from \code{comp_df} for each sample in \code{samp_df}.}
 }
 \value{
-a \code{data.frame} detailing the most similar NVC psuedo-quadrats for each sample in the focal data \code{samp_df}
+a \code{data.frame} detailing the most similar NVC pseudo-quadrats for each sample in the focal data \code{samp_df}
 }
 \description{
-Determine most similar NVCs for each sample by comparing samples against NVC psuedo-quadrat data
+Determine most similar NVCs for each sample by comparing samples against NVC pseudo-quadrat data
 }
 \examples{
 

@@ -9,7 +9,7 @@ compare_spp_names(samp_df, comp_df = NULL, spp_col = "species", verbose = TRUE)
 }
 \arguments{
 \item{samp_df}{A \code{data.frame} containing the sample data that you want to
-assign to NVC via comparison with psuedo-quadrat data}
+assign to NVC via comparison with pseudo-quadrat data}
 
 \item{comp_df}{A \code{data.frame} containing the comparison data samples you
 want to match your focal samples in \code{samp_df} to. The default value of
@@ -25,7 +25,7 @@ output text to the display}
 }
 \value{
 A \code{character} vector containing the names of species from the sample
-data that were not matched to names in the psuedo-quadrant data
+data that were not matched to names in the pseudo-quadrant data
 }
 \description{
 Compare the species names used in the sample dataset against
